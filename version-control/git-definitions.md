@@ -8,7 +8,7 @@
 
 * What is a commit? What makes a good commit message?
 Since Git doesn’t automatically save versions of your files, the save point in Git are called commits. Commit has: a unique id, a message, author, and a timestamp.
-The commit message should describe, in details of what was changed since the last commit. You should start with a verb for commit messages.
+The commit message should describe, in details of what was changed since the last commit. You should start with a verb for commit changes to follow protocol.
 
 * What is a merge conflict?
 If you change the same thing in both branches, then there will be a merge conflict.
