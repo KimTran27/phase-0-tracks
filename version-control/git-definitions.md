@@ -2,7 +2,7 @@
 
 **Instructions: ** Define each of the following Git concepts.
 
-* What is version control?  Why is it useful? It’s a tool that lets you track your progress, review and revert changes, and create back ups in your code. Git is a version control system that developers use to protect softwares. It can handle everything from small to very large projects, it is fast and efficient. If someone makes a mistake, you can always roll back.
+* What is version control?  Why is it useful? It’s a tool that lets you track your progress, review and revert changes, and create back ups in your code. Git is a version control system that developers use to protect softwares. It can handle everything from small to very large projects, it is fast and efficient. If someone makes a mistake, you can always roll back and see where the mistake took place.
 
 * What is a branch and why would you use one? Master is the default branch name in Git. When you create a new branch, it creates a new pointer for you to navigate around. Lets say you can to create a new branch called counting. You will do git branch command: git branch counting
 
