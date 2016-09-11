@@ -50,4 +50,4 @@ figcaption {
     body {
         background-color: hotpink;
     }
-    @media handheld and (grid) and (max-width: 15em);
+    @media handheld and (grid) and (max-width: 15em) {  }
