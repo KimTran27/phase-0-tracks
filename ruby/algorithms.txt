@@ -1,0 +1,27 @@
+Algorithm for using an elevator:
+
+-Wait for people the enter the elevator.
+-Once, you have at least one attendance, Close elevator door.
+-Ask for desired floor number.
+-If you have understood which floor number was called out, select the floor number that is the same with user’s response.
+-Then move to floor and open elevator doors to let people out.
+
+-Otherwise:Ask user again.
+-Wait for 30 secs for response, if no response was heard, go back down to lobby floor.
+
+
+
+Common task in your life that could be translated into an algorithm
+Making a cup of tea.
+
+-Obtain kettle from kitchen cabinet.
+-Fill the kettle with water.
+-Place kettle on stove, and turn on stove.
+-Wait for water to boil.
+-Put the teabag in a cup.
+-Check to see if water is boiled.
+-If water is boiled, pour water into the cup.
+	-Stir the tea.
+	-Drink the tea.
+
+-Otherwise, wait for water to boil.
