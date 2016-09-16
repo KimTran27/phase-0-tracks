@@ -5,17 +5,17 @@ while processed
 puts "How many employees will be processed?"
 
 number_of_employees = gets.chomp.to_i
-if number_of_employees > 0
-	processed = false
-else puts "Enter valid number."
+	if number_of_employees > 0
+		processed = false
+	else 
+		puts "Enter valid number."
+	end
 end
- 
 counter = 0
 until counter == number_of_employees
 
-
 # Screening questions
-puts "What's the vampire's name?"
+puts "What is your name?"
 vampire_name = gets.chomp
 vampire_name = vampire_name.capitalize
 
@@ -60,12 +60,12 @@ else
 end
 
 #add list for allergies
-puts "Do you have any allergies to list?"
+puts "Do you have any allergies to list? (y/n)"
 allergies = gets.chomp.downcase
-if allergies == "yes"
+if allergies == "y"
     add_allergies = true
 while add_allergies 
-      puts "Enter an allergy one by one.  Enter 'done' when finished."
+      puts "Enter your allergy one by one.  Enter 'done' when finished."
       allergy = gets.chomp.downcase
       if allergy == "sunshine"
         conclusion = "Probably a vampire."
@@ -78,7 +78,7 @@ add_allergies = false
   end
 
 if sunshine != true
-results = String.new
+	results = String.new
 
 #execute code conditionally
 if  matching_age && (vampires_likes_garlic || needs_insurance)
@@ -98,14 +98,15 @@ if
 	vampire_name == "Drake Cula" or vampire_name == "Tu Fang" 
      results = "Definitely a vampire."
 end
+
 if results == ""
       results = "Results inconclusive."
 end 
 end
 
-  puts conclusion
-  counter += 1
-  sunshine = false
+puts results
+counter += 1
+sunshine = false
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? 
