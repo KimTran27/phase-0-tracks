@@ -40,7 +40,7 @@ garlic_answer = gets.chomp
 if garlic_answer == "y"
 	vampires_likes_garlic = true
 else 
-	vampires_hates_garlic = true
+	vampires_likes_garlic = false
 end
 
 puts "Would you like to enroll in our health insurance? (y/n)"
