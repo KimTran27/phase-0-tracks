@@ -34,7 +34,7 @@ end
 puts "What is the hamster's estimated age?"
 	estimated_age = gets.chomp
 	if estimated_age ==""
-		estimated_age = "N/A"
+		estimated_age = "nil"
 	else
 		estimated_age = estimated_age.to_f
 end
