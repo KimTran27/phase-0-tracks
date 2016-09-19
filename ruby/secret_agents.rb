@@ -22,13 +22,13 @@ end
 #decrypt
 def decrypt (str)
 	index = 0
-	while index <str.length
-		if str[index] == ""
-			index += 1
-		else
-			str[index] = reverse(str[index])
-		end
-		index +=1
+	while index < str.length
+		alphabet = "abcdefghijklmnopqrstuvwxyz"
+    	reversed_alpha = alphabet.reverse!
+		 add_index = reversed_alpha.index(str[index]) 
+    add_index += 1
+    str[index] = reversed_alpha[add_index]
+    index += 1
 	end
 	str
 end
@@ -36,19 +36,29 @@ end
 #puts "enter a password to decrypt"
 #puts decrypt(encrypt("swordfish"))
 #puts decrypt(gets.chomp)
+counter = 0
+while counter < 1
 
 puts "Do you want to encrypt or decrypt a password?"
 password_status = gets.chomp.downcase
-if password_status == "encrypt"
-	puts "Enter your password"
-	password_encrypt = encrypt(gets.chomp)
-	puts password_encrypt
-elsif password_status == "decrypt"
-	puts "Enter your password"
-	password_decrypt = decrypt(gets.chomp)
-	puts password_decrypt
-else
+	if password_status == "encrypt"
+	perference_1 = 1
+	counter += 2
+	elsif password_status == "decrypt"
+	perference_1 =2
+	counter += 2
+	else
 	puts "Not valid"
+	counter == 0
+	end
+end
+
+puts "Please enter your password."
+str = gets.chomp
+if agent_request = 1
+    encrypt(secret_password)
+elsif agent_request = 2
+    decrypt(secret_password)
 end
 
 puts "Goodbye"
