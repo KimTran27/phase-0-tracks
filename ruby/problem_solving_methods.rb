@@ -1,5 +1,5 @@
 #Release 0
-array = [45, 67, 87, 1]
+array = [42, 23, 89, 1]
 def sort_array (array, num)
 index = 0
 while index < array.length 
@@ -16,7 +16,8 @@ end
     
 sort_array(array, 999)
 
-#other option
+
+#other option for release 0
 
 def search_array (arr, number)
 
@@ -46,6 +47,7 @@ def fib(number)
 		else
 			counter = 2
 			while counter < num
+        
 				arr[counter]= arr[counter - 2] + arr[counter -1]
 				counter += 1
 			end
