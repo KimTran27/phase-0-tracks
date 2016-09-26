@@ -60,6 +60,52 @@ p fib(6)
 p fib(100)[-1] == 218922995834555169026
 # => true
 
+
+#release 1 Calculate Fibonacci numbers (second method)
+def fib(num) # 'num' is not an index here. It is just the number of Fibonacci elements that user want to get.
+
+    arr = [0,1] #arr[0] and arr[1] are fixed. We need to add from arr[2] if needed.
+
+    if num == 0  # I think this should be (num == 1) 
+                 # Cause num is not an index, 
+                 # it is just the number of element inside of array in this method
+                 # If you run p fib(1), it returns [0,1], but it was supposed to return [0]
+            arr = [0]
+        elsif num == 1 # Same reason as above, this sould be (num == 2)
+            arr = [0,1]
+        else
+            # I think you might understand until this line-------------
+        
+            counter = 2  # The reason 'count' begins with 2 is that fib(1) and fib(2) are fixed as [0] and [0,1]
+            while counter < num # If the input is neither 1 nor 2, we need to count up 
+                                # For example, if the input was 4, array will have 4 elements.(but the last index is 3, not 6)
+       
+                arr[counter]= arr[counter - 2] + arr[counter -1]
+
+                # Like I mentioned on the line 5 comment, we need to create(?) from arr[2] if a user wants more 
+                # first loop => arr[2] = arr[0] + arr[1], counter increases by 1, counter = 3 
+                # second loop => arr[3] = arr[1] + arr[2], counter increases by 1, counter = 4
+                # Since the counter is 4, it will stop the loop
+
+
+                counter += 1
+            end
+        end
+
+        return arr
+        # Now our 'arr' have arr[2] and arr[3]
+        # So if you print it out, it will show the whole array !
+
+
+end
+p fib(1)  # The result of this should be [0], but it returns [0,1]
+p fib(2)  # This one works, but it is just coincedence. 
+p fib(4)
+p fib(6)
+# => [0, 1, 1, 2, 3, 5]
+p fib(100)[-1] == 218922995834555169026
+# => true
+
 #Release 2 Implement sorting algorithm
 # cannot get this one to work, because index keeps breaking.
 =begin
