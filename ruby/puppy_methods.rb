@@ -2,7 +2,6 @@ class Puppy
 
 	def  initialize
 	puts "Initializing new puppy instance ..."
-
 	end
 
 	def fetch(toy)
@@ -12,6 +11,7 @@ class Puppy
 
   	def roll_over
   	puts "*roll over*"
+  	end
 
   	def dog_years(age)
 	age * 7
@@ -24,7 +24,7 @@ class Puppy
 	puts "Woof Woof!"
 	count += 1
 	end
-end
+	end
 # number.times{puts "Woof Woof!"}
 
 	def play_dead
@@ -37,9 +37,11 @@ puppy = Puppy.new
 
 puppy.fetch("stick")
 puppy.fetch("ball")
+puppy.roll_over
+puts puppy.dog_years(2)
 puppy.bark(2)
 puppy.play_dead
-Hachi = Puppy.new
+#Hachi = Puppy.new
 
 # -----------NEW TURTLE CLASS -------------
 
@@ -64,17 +66,15 @@ arr = []
 #break if count == 50
 
 until count > 50
-puts "Enter Instance name:"
-instance_name = gets.chomp
-instance_name = Puppy.new
+instance_name = Turtle.new
 
 arr << instance_name
 
 count += 1
 end
 
-arr.each do
+arr.each do |instance_name|
 
-instance_name.bark(3)
-instance_name.play_dead
+instance_name.hiss(3)
+instance_name.come_here
 end
