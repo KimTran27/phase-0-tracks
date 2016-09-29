@@ -20,7 +20,6 @@ Drools
 Jump
 Bark
 Guard
-Fetch
 Calm
 Protective
 =end
