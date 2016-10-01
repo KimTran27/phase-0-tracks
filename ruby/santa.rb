@@ -1,6 +1,7 @@
 class Santa
 	attr_reader :ethnicity 
 	attr_accessor :age, :gender #things you can update
+
 	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
@@ -24,6 +25,7 @@ class Santa
 
 	def celebrate_birthday
 		@age += 1
+	end
 
 	#setter method to make gender writable
 	def gender=(new_gender)
@@ -36,16 +38,16 @@ class Santa
 		puts "#{reindeer} is now ranked last on this list."
 	end
 
-	def age
-		age = age.to_i
-		@age = age
-		put "#{age}"
-		@age
-	end
+	#def age
+		#age = age.to_i
+		#@age = age
+		#put "#{age}"
+		#@age
+	#end
 
 	def ethinicity
 		@ethinicity
-
+	end
 
 end
 
@@ -56,59 +58,33 @@ santa = Santa.new("male", "white")
 santa.speak 
 santa.eat_milk_and_cookies("vanilla")
 santa.status
-santa.age(1)
+santa.age = 21
 
-genders = ["agender", "bigender" "gender fluid", "male", "female", "N/A"]
+
+santa_arr = []
+gender = ["agender", "bigender" "gender fluid", "male", "female", "N/A"]
 ethnicities = ["latino", "native_american", "asian", "white", "african_american", "N/A"]
 
-i = 0
-santa_arr = []
-
-while 1 < 6
+gender.length.times do |i|
 	santa_arr << Santa.new(gender[i],ethnicities[i])
-	i += 1
 end
 
 #test getter and setter methods.
 puts "santa's current age is #{santa.age.to_s}"
-bob.celebrate_birthday
+santa.celebrate_birthday
 puts "santa just celebrated a birthday. They are now #{santa.age.to_s}"
-santa.get_mad_at("Dasher")
-santa.gender = "unicorn"
+santa.get_mad_at("Rudolph")
+santa.gender = "female"
 puts "santa's current info:"
 puts "Gender: #{santa.gender}" 
 puts "Ethnicity: #{santa.ethnicity}"
 
 #create a bunch of new santas
 i = 0 
-while i < 10 
-	new_santa = Santa.new(genders.sample, ethnicities.sample)
+while i < 100
+	new_santa = Santa.new(gender.sample, ethnicities.sample)
 	random_age = Random.new 
-
 	new_santa.age = random_age.rand(0..140)
 	puts "This Santa is #{new_santa.gender}, #{new_santa.age} years old, and #{new_santa.ethnicity}."
 	i += 1
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
