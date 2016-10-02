@@ -12,12 +12,11 @@ def list(string)
 	array.each do |item|
 		hash[item] = 1
 	end
-	return
 	p hash
 	print_list(hash)
+	return hash
 end
-#grocery_list = list("carrots oranges kale lettuce spinach mushrooms")
-#default quantity = 1
+grocery_list = list("carrots oranges kale lettuce spinach mushrooms")
 
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -30,19 +29,47 @@ end
 # input: item name and optional quantity
 # steps:
 # output:
+def add (list, item, quantity)
+	list[item] = quantity
+end
+
+add(grocery_list, "tofu", 8)
+p grocery_list
 
 # Method to remove an item from the list
 # input:
 # steps:
 # output:
 
+def remove(list, item)
+	list.delete(item)
+end
+
+remove(grocery_list, "kale")
+p grocery_list
+
 # Method to update the quantity of an item
 # input:
 # steps:
 # output:
+def update(list, item, quantity)
+	list[item] = quantity
+end
 
+update(grocery_list, "oranges", 5)
+print_list(grocery_list)
 # Method to print a list and make it look pretty
 # input:
 # steps:
 # output:
+
+
+
+
+
+
+
+
+
+
 
