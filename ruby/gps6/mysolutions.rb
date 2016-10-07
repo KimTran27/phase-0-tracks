@@ -6,10 +6,11 @@
 # EXPLANATION OF require_relative
 #
 #
-require_relative 'state_data'
+require_relative 'state_data' #require relative, your file will be searched in the current folder, that you call out.
+#require doesn't have that context, and will just look in that parent director.
 
 class VirusPredictor
-
+  #initialize instance variables, with state_of_origin, population_density, population as it's parameters.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -25,6 +26,8 @@ class VirusPredictor
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
+    #.floor is when you're comparing 2 things 1.2.floor will give you 1.
+    #returns the largest integer float. rounding down to the "floor"
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
@@ -57,6 +60,7 @@ class VirusPredictor
     else
       speed += 2.5
     end
+    
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -67,7 +71,8 @@ end
 #=======================================================================
 
 # DRIVER CODE
- # initialize VirusPredictor for each state
+# initialize VirusPredictor for each state
+# State_data has constant variable scope, in the same code as your driver code... but since it's a constant, it has a wider scope.
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
@@ -81,6 +86,28 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+STATE_DATA.each do |state, population_info|
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #=======================================================================

@@ -1,6 +1,7 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
-
+#scope: where a variable is accessible. local scope within a function. 
+#something in driver code, you can't access if you're not in the scope.
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
