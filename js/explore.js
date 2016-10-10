@@ -1,19 +1,19 @@
-// create a function with one parameter
-function sayHello(string){
-// set the empty string named new_string
-	new_string = ""
-	// use loop to prepend the each letter of the string to new_str
-	// repeat this until the loop hits the last letter of the string
-	for (i = 0 ; i < string.length ; i++){
-		new_string = string[i] + new_string
-	}
+// create a function with one parameter ("string")
+// Decrementing while-loop with concatenation and substring
 
-	return new_string
+function reverse(s) {
+  var i = s.length,
+      o = '';
+  while (i > 0) {
+    o += s.substring(i - 1, i);
+    i--;
+  }
+  return o;
 }
 
 if (true) {
-	console.log(sayHello("hello"));	
-}
+ 	console.log(reverse("hello"));	
+ 	}
 else {
-	console.log(sayHello("goodbye"));
-}
+ 	console.log(reverse("goodbye"));
+ 	}
