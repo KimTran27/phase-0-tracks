@@ -1,0 +1,59 @@
+
+Display the information in one table (either table is fine).
+SELECT * FROM students;
+1|kim|24|true|1
+2|lisa|26|true|2
+3|kylie|22|false|2
+4|kai|21|false|2
+5|kenny|25|true|1
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+UPDATE students SET age=25 WHERE name="kim";
+1|kim|25|true|1
+
+
+Display the information in both tables using one query.
+SELECT * FROM students JOIN major ON students.major_id = major.id;
+1|kim|25|true|1|1|business
+2|lisa|26|true|2|2|comp sci
+3|kylie|22|false|2|2|comp sci
+4|kai|21|false|2|2|comp sci
+5|kenny|25|true|1|1|business
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+SELECT students.name, major.name FROM students JOIN major ON students.major_id = major.id;
+kim|business
+lisa|comp sci
+kylie|comp sci
+kai|comp sci
+kenny|business
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+DELETE FROM students WHERE age=26;
+1|kim|25|true|1|1|business
+3|kylie|22|false|2|2|comp sci
+4|kai|21|false|2|2|comp sci
+5|kenny|25|true|1|1|business
+
+
+DIFF types of JOINS
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name=table2.column_name;
+
+
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name=table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name=table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name=table2.column_name;
