@@ -55,3 +55,26 @@ def display_ascending_order(db)
 	end
 
 end
+
+
+########################### DRIVER CODE ###############################
+
+# faker gem to populate data
+# 50.times do
+# 	create_student(db,Faker::Number.number(5),Faker::Name.name,Faker::Educator.course,Faker::Internet.email)
+# end
+
+# find student by email address
+find_student(db,"email","AlyJ@gmail.com")
+
+# find student by student id number
+find_student(db,"student_id",182662)
+
+# find student by major
+find_student(db,"major","Global Business Admin")
+
+# find student by name
+find_student(db,"name","Aly Johnson")
+
+# show all the student by ascending order
+display_ascending_order(db)
