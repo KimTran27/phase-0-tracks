@@ -10,9 +10,16 @@ db.results_as_hash = true;
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS students(
 		id INTEGER PRIMARY KEY,
-		student_number INTEGER,
+		student_id INTEGER,
 		name VARCHAR(255),
 		major VARCHAR(255),
 		email VARCHAR(255)
 	)
 SQL
+
+# db.execute("drop table if exists students;")
+db.execute(create_table_cmd) 
+
+def create_student(db,student_id,name,major,email)
+	db.execute("INSERT INTO students (student_id,name,major,email) VALUES (?,?,?,?)",[student_id,name,major,email])
+end
