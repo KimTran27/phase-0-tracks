@@ -46,3 +46,12 @@ def find_student(db,attr,value)
 	puts "#{result[0]['student_id']} | #{result[0]['name']} | #{result[0]['major']} "
 	puts "email : #{result[0]['email']}"
 end
+
+def display_ascending_order(db)
+	students = db.execute("SELECT * FROM students ORDER BY name")
+	puts "###### STUDENT LIST ######"
+	students.each do |student|
+		puts " #{student['name']} | #{student['major']} | email : #{student['email']}"
+	end
+
+end
