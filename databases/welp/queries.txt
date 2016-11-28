@@ -1,0 +1,62 @@
+In the welp directory, create a file called queries.txt. Once you've figured out the queries below, paste them into queries.txt, along with the output from your database.
+
+welp (2.2 #) :> sqlite3 welp.db
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter ".help" for usage hints.
+
+sqlite> .schema
+CREATE TABLE businesses (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+);
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+);
+CREATE TABLE businesses_users (
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id) 
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id)
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+You've joined two tables before. How do you join three?
+SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+1|veggie town|1|5|great food!|1|1|1|kim|tran
+1|veggie town|2|4|yummy food!|1|2|2|kimberly|transcendent
+2|veggie ville|3|5|highly recommend!!|2|2|2|kimberly|transcendent
+2|veggie ville|4|2|took way too long to get your order!|2|3|3|kimmy|tee
+
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT users.First_name, users.Last_name, businesses.name, reviews.stars, reviews.comment FROM businesses JOIN users JOIN reviews ON reviews.business_id = businesses.id AND reviews.user_id = users.id;
+kim|tran|veggie town|5|great food!
+kimberly|transcendent|veggie town|4|yummy food!
+kimberly|transcendent|veggie ville|5|highly recommend!!
+kimmy|tee|veggie ville|2|took way too long to get your order!
+
+How do you view the data of all three tables for just one particular business? 
+
+SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id AND businesses.id=1;
+1|veggie town|1|5|great food!|1|1|1|kim|tran
+1|veggie town|2|4|yummy food!|1|2|2|kimberly|transcendent
+
+
+
+
+
+
+
+
